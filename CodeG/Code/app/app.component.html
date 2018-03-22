@@ -1,0 +1,11 @@
+<h1>First Angular Example</h1>
+{{title}}
+<input type="text" [placeholder]="title">
+<div [hidden]="flag">
+    This is Not Show
+</div>
+<p [class]="myclass" [hidden]="flag" [innerHTML]="title">ghfgjkhjkfd</p>
+
+<input type="text" placeholder="Type name Here" (keyup)="takeInput($event)">
+<h3>Name is {{name}}</h3>
+<button (click)="increment($event)">{{counter}}</button>
