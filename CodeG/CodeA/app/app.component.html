@@ -1,0 +1,27 @@
+<h1>First Angular Example</h1>
+{{title}}
+<br>
+<hr> Calling Child
+<app-child-comp></app-child-comp>
+<input type="text" [placeholder]="title">
+<div [hidden]="flag">
+    This is Not Show
+</div>
+<p [class]="myclass" [hidden]="flag" [innerHTML]="title">ghfgjkhjkfd</p>
+<div [ngClass]="{'red':counter>5,'green':counter<=5}">
+    <h2>This is Ng Class Demo</h2>
+</div>
+<div [ngStyle]="{color:counter>5?'yellow':'orange'}">
+    <h3>This is Ng Style Demo....</h3>
+    <ul>
+        <li *ngFor="let emp of empNames">
+            <strong *ngIf="emp==getEmpName()"> {{emp}}</strong>
+            <i *ngIf="emp!=='ram'">{{emp}}</i>
+        </li>
+    </ul>
+</div>
+<input type="text" placeholder="Type name Here" (keyup)="takeInput($event)">
+<h3>Name is {{name}}</h3>
+<button (click)="increment($event)">{{counter}}</button>
+<input type="text" [(ngModel)]="firstname" placeholder="Type Name Here">
+<h3>Name is {{firstname}}</h3>
