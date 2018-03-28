@@ -1,0 +1,37 @@
+<h1>First Angular Example</h1>
+{{title}}
+<br>
+<app-child2-comp [mydata]="'this is the data coming from parent'"></app-child2-comp>
+<hr> Calling Child
+<fieldset>
+    <legend>Child Comp</legend>
+
+    <app-child-comp (callparent)="parentCall($event)" [sendtochild]="msg"></app-child-comp>
+    <app-child-comp (callparent)="parentCall($event)" [sendtochild]="msg"></app-child-comp>
+    <app-child-comp (callparent)="parentCall($event)" [sendtochild]="msg"></app-child-comp>
+</fieldset>
+<input (keyup)="takeDataForChild($event)" type="text" [placeholder]="title">
+<div [hidden]="flag">
+    This is Not Show
+</div>
+<p [class]="myclass" [hidden]="flag" [innerHTML]="title">ghfgjkhjkfd</p>
+<div [ngClass]="{'red':counter>5,'green':counter<=5}">
+    <h2>This is Ng Class Demo</h2>
+</div>
+<div [ngStyle]="{color:counter>5?'yellow':'orange'}">
+    <h3>This is Ng Style Demo....</h3>
+    <ul>
+        <li *ngFor="let emp of empNames">
+            <strong *ngIf="emp==getEmpName()"> {{emp}}</strong>
+            <i *ngIf="emp!=='ram'">{{emp}}</i>
+        </li>
+    </ul>
+</div>
+<input type="text" placeholder="Type Last Name Here" #lastname>
+<button (click)="printLastName(lastname)">Print Last Name</button>
+<h3>Last Name is {{lastName}}</h3>
+<input type="text" placeholder="Type name Here" (keyup)="takeInput($event)">
+<h3>Name is {{name}}</h3>
+<button (click)="increment($event)">{{counter}}</button>
+<input type="text" [(ngModel)]="firstname" placeholder="Type Name Here">
+<h3>Name is {{firstname}}</h3>
